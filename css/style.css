@@ -1,0 +1,341 @@
+/* hexaTune Website — Global Styles */
+
+:root {
+  --bg-primary: #0a0e17;
+  --bg-secondary: #111827;
+  --bg-card: #1a2233;
+  --text-primary: #e5e7eb;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
+  --accent: #3b82f6;
+  --accent-hover: #60a5fa;
+  --accent-glow: rgba(59, 130, 246, 0.15);
+  --border: #1f2937;
+  --radius: 12px;
+  --max-width: 1100px;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+/* ── Navigation ─────────────────────────────────── */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10, 14, 23, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.navbar .logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--text-primary);
+}
+
+.navbar .logo-link img {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+}
+
+.navbar nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar nav a {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.navbar nav a:hover {
+  color: var(--text-primary);
+}
+
+/* ── Container ──────────────────────────────────── */
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ── Hero ────────────────────────────────────────── */
+
+.hero {
+  text-align: center;
+  padding: 5rem 1.5rem 3rem;
+}
+
+.hero img {
+  width: 140px;
+  height: 140px;
+  border-radius: 24px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 60px var(--accent-glow);
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.hero .tagline {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+/* ── Sections ───────────────────────────────────── */
+
+.section {
+  padding: 3.5rem 0;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.section-title.center {
+  text-align: center;
+}
+
+.section-title.center::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section p {
+  color: var(--text-secondary);
+  max-width: 750px;
+}
+
+/* ── Cards Grid ─────────────────────────────────── */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 30px var(--accent-glow);
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+}
+
+/* ── Tag List ───────────────────────────────────── */
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  list-style: none;
+}
+
+.tag-list li {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* ── Footer ─────────────────────────────────────── */
+
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.footer .links {
+  margin-bottom: 0.75rem;
+}
+
+.footer .links a {
+  color: var(--text-secondary);
+  margin: 0 0.75rem;
+}
+
+.footer .links a:hover {
+  color: var(--text-primary);
+}
+
+/* ── Legal Pages ────────────────────────────────── */
+
+.legal {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+
+.legal h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+}
+
+.legal .effective-date {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 2.5rem;
+}
+
+.legal h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 2.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.legal h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.legal p {
+  color: var(--text-secondary);
+  margin-bottom: 0.85rem;
+}
+
+.legal ul {
+  color: var(--text-secondary);
+  margin: 0.5rem 0 1rem 1.5rem;
+}
+
+.legal ul li {
+  margin-bottom: 0.35rem;
+}
+
+.legal a {
+  color: var(--accent);
+}
+
+/* ── Responsive ─────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 3rem 1rem 2rem;
+  }
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  .hero .tagline {
+    font-size: 1rem;
+  }
+  .section-title {
+    font-size: 1.3rem;
+  }
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+  .navbar nav {
+    gap: 1rem;
+  }
+  .navbar nav a {
+    font-size: 0.82rem;
+  }
+  .legal h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar .container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .hero img {
+    width: 100px;
+    height: 100px;
+  }
+}
